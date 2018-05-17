@@ -1,18 +1,15 @@
 FROM node:carbon
+MAINTAINER Matt@DenverCliffs.com
 
+# carbon is node 8 (8.11 currently)
 
-WORKDIR /usr/src/app
+RUN mkdir /app
+WORKDIR /app
+
+COPY build-docker.sh /
 
 # install app dependencies
 # widwcard ensures both package.json and package-lock.json are included
 # NOTE: this uses cached Docker Layers http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/
 
-COPY package*.json ./
-
-RUN npm install
-
-
-COPY . .
-
-EXPOSE 8080
-CMD [ "npm", "start" ]
+CMD [ "/build-docker.sh" ]
