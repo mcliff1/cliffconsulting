@@ -6,4 +6,4 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
-location.protocol === 'https:' && registerServiceWorker();
+registerServiceWorker();
