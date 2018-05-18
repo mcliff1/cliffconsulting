@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Media,
-  Nav, NavItem, NavLink, Container, Row, Col } from 'reactstrap';
+  Nav, NavItem, NavLink } from 'reactstrap';
 import { NavLink as RRNavLink } from 'react-router-dom';
 import { FaEnvelope, FaLinkedinSquare, FaTwitter, FaGithub } from 'react-icons/lib/fa';
 
@@ -55,13 +55,13 @@ class MyNav extends Component {
         <FaEnvelope /></NavLink>
         </NavItem>
 
-        <NavItem><NavLink href="https://www.linkedin.com/in/matt-cliff-45a75b6/" target="_blank" title="Linked In" >
+        <NavItem><NavLink href="https://www.linkedin.com/in/matt-cliff-45a75b6/" target="_blank" rel="noopener noreferrer" title="Linked In" >
         <FaLinkedinSquare /></NavLink></NavItem>
 
-        <NavItem><NavLink href="https://twitter.com/themattcliff" target="_blank" title="Twitter" >
+        <NavItem><NavLink href="https://twitter.com/themattcliff" target="_blank" rel="noopener noreferrer" title="Twitter" >
         <FaTwitter /></NavLink></NavItem>
 
-        <NavItem><NavLink href="https://github.com/mcliff1" target="_blank" title="GitHub" >
+        <NavItem><NavLink href="https://github.com/mcliff1" target="_blank" rel="noopener noreferrer" title="GitHub" >
         <FaGithub /></NavLink></NavItem>
 
         </Nav>
