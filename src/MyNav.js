@@ -34,7 +34,7 @@ class MyNav extends Component {
           <NavLink to="/" tag={RRNavLink}>Home</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink to="/resume.html" tag={RRNavLink}>Resume</NavLink>
+          <NavLink to="/resume" tag={RRNavLink}>Resume</NavLink>
         </NavItem>
         <NavItem>
           <NavLink to="/projects" tag={RRNavLink}>Projects</NavLink>
