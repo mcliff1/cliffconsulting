@@ -1,56 +1,67 @@
 import React, { Component } from 'react';
-
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Media,
+  Nav, NavItem, NavLink, Container, Row, Col } from 'reactstrap';
+import { FaEnvelope, FaLinkedinSquare, FaTwitter, FaGithub } from 'react-icons/lib/fa';
 
 
 
 
 class MyNav extends Component {
+  constructor(props) {
+    super(props);
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
+
   render() {
     return (
       <div>
-      <nav className="navbar navbar-expand bg-white">
-      <div className="container-fluid wrap">
-      <div className="navbar-header">
-      <a className="navbar-brand" href="http://cliffconsulting.com/">
-        <img src="images/cliffconsulting_logo.gif" />
-        Matt Cliff
-      </a>
-      </div>
+      <Navbar color="white" toggleable>
+        <NavbarToggler right onClick={this.toggle} />
+        <NavbarBrand href="/"><Media object src="cliffconsulting_logo.gif" />Matt Cliff</NavbarBrand>
+        <Collapse isOpen={this.state.isOpen} navbar>
+        <Nav className="ml-auto" navbar>
+        <NavItem>
+          <NavLink href="/">Home</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="/resume">Resume</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="/projects">Projects</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="/articles">Articles</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="/contact">Contact</NavLink>
+        </NavItem>
 
-      <div className="navbar collapse">
-          <ul className="nav navbar-nav">
-            <li className="nav-item active">
-              <a className="nav-link active" href="index.html">Home</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="resume.html">Resume</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="projects.html">Projects</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="articles.html">Articles</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="contact.html">Contact</a>
-            </li>
-          </ul>
+        <NavItem>
+          <NavLink href="mailto://matt@denvercliffs.com" title="matt@denvercliffs.com">
+        <FaEnvelope /></NavLink>
+        </NavItem>
 
-          <ul className="navbar-nav pull-right">
-            <li><a href="mailto://matt@denvercliffs.com" title="matt@denvercliffs.com">
-            <i className="fa fa-envelope fa-fw"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/matt-cliff-45a75b6/" target="_blank" title="Linked In" >
-            <i className="fa fa-linkedin fa-fw"></i></a></li>
-            <li><a href="https://twitter.com/themattcliff" target="_blank" title="Twitter">
-            <i className="fa fa-twitter fa-fw"></i></a></li>
-            <li><a href="https://github.com/mcliff1" target="_blank" title="GitHub">
-            <i className="fa fa-github fa-fw"></i></a></li>
-          </ul>
-       </div>
+        <NavItem><NavLink href="https://www.linkedin.com/in/matt-cliff-45a75b6/" target="_blank" title="Linked In" >
+        <FaLinkedinSquare /></NavLink></NavItem>
 
+        <NavItem><NavLink href="https://twitter.com/themattcliff" target="_blank" title="Twitter" >
+        <FaTwitter /></NavLink></NavItem>
 
-      </div>
-      </nav>
+        <NavItem><NavLink href="https://github.com/mcliff1" target="_blank" title="GitHub" >
+        <FaGithub /></NavLink></NavItem>
+
+        </Nav>
+        </Collapse>
+      </Navbar>
 
       </div>
 
