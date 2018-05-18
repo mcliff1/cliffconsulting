@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Media,
   Nav, NavItem, NavLink, Container, Row, Col } from 'reactstrap';
+import { NavLink as RRNavLink } from 'react-router-dom';
 import { FaEnvelope, FaLinkedinSquare, FaTwitter, FaGithub } from 'react-icons/lib/fa';
 
 
@@ -30,19 +31,19 @@ class MyNav extends Component {
         <Collapse isOpen={this.state.isOpen} navbar>
         <Nav className="ml-auto" navbar>
         <NavItem>
-          <NavLink href="/">Home</NavLink>
+          <NavLink to="/" tag={RRNavLink}>Home</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="/resume">Resume</NavLink>
+          <NavLink to="/resume.html" tag={RRNavLink}>Resume</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="/projects">Projects</NavLink>
+          <NavLink to="/projects" tag={RRNavLink}>Projects</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="/articles">Articles</NavLink>
+          <NavLink to="/articles" tag={RRNavLink}>Articles</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="/contact">Contact</NavLink>
+          <NavLink to="/contact" tag={RRNavLink}>Contact</NavLink>
         </NavItem>
 
         <NavItem>
