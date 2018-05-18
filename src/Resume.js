@@ -3,7 +3,7 @@ import { Collapse, Card, Button, CardBody } from 'reactstrap';
 
 
 
-class MyCard extends Component {
+class ResumeSection extends Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
@@ -17,7 +17,6 @@ class MyCard extends Component {
   toggle() {
     this.setState({ isOpen: !this.state.isOpen });
   }
-
 
   render() {
     return (
@@ -47,16 +46,16 @@ class Resume extends Component {
           <p><a href="/mcliff_resume_2018_04.pdf">PDF</a></p>
 
 
-          <MyCard header="Objective" startOpen={true}>
+          <ResumeSection header="Objective" startOpen={true}>
           Seeking role in cloud architecture/development with interest in data science. Over twenty years of software development experience including ten years in technology leadership. A foundation in mathematics and computer science has supported a continual learning and a passion for machine learning and predictive modeling.
-          </MyCard>
+          </ResumeSection>
 
 
 
 
 
 
-          <MyCard header="Skills and Abilities" startOpen={true}>
+          <ResumeSection header="Skills and Abilities" startOpen={true}>
           <strong>DATA SCIENCE FOUNDATION AND CONTINUAL LEARNER</strong>
          <ul>
            <li>Familiar with R including tidy, knitr, ggplot2, dplyr, caret</li>
@@ -90,13 +89,13 @@ class Resume extends Component {
            <li>Communication; working with senior management and product owners</li>
            <li>Staff and Non-employee staff management, across the US and in India (hired over 50 contractors)</li>
          </ul>
-          </MyCard>
+          </ResumeSection>
 
 
 
 
 
-          <MyCard header="Training and Certification">
+          <ResumeSection header="Training and Certification">
 
 
                     <ul>
@@ -105,12 +104,12 @@ class Resume extends Component {
                   <li><a href="https://www.coursera.org/account/accomplishments/specialization/HSUAANKME4AG" rel="noopener noreferrer" target="_blank"><strong>COURSERA - DATA SCIENCE SPECIALIZATION</strong></a>
                   <p>Complete March 2018; 10 4-week courses, includes R, regression, data science practice, inference, machine learning</p></li>
                   </ul>
-          </MyCard>
+          </ResumeSection>
 
 
 
 
-          <MyCard header="Experience">
+          <ResumeSection header="Experience">
 
 
                           <ul>
@@ -156,11 +155,11 @@ class Resume extends Component {
                           </ul>
 
 
-          </MyCard>
+          </ResumeSection>
 
 
 
-          <MyCard header="Education">
+          <ResumeSection header="Education">
 
 
                         <ul>
@@ -175,21 +174,21 @@ class Resume extends Component {
                         </ul>
 
 
-          </MyCard>
+          </ResumeSection>
 
 
 
 
 
 
-          <MyCard header="Publication">
+          <ResumeSection header="Publication">
 
 
                 <em>&quot;Positivity, Trotter Products, and Blow-up&quot;</em>; Matt Cliff, Jerome Goldstein, Markus Wacker; Positivity, Volume 8, Issue 2 pp 187 – 208, June 2004. – A new approach to blow-up results for nonlinear evolution equations.
 
 
 
-          </MyCard>
+          </ResumeSection>
 
 
 
