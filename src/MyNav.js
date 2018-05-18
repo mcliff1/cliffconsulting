@@ -29,7 +29,8 @@ class MyNav extends Component {
         <NavbarToggler right="true" onClick={this.toggle} />
         <NavbarBrand href="/"><Media object src="cliffconsulting_logo.gif" />Matt Cliff</NavbarBrand>
         <Collapse isOpen={this.state.isOpen} navbar>
-        <Nav className="ml-auto" navbar>
+
+        <Nav fill navbar>
         <NavItem>
           <NavLink to="/" tag={RRNavLink}>Home</NavLink>
         </NavItem>
@@ -45,6 +46,9 @@ class MyNav extends Component {
         <NavItem>
           <NavLink to="/contact" tag={RRNavLink}>Contact</NavLink>
         </NavItem>
+        </Nav>
+
+        <Nav className="ml-auto" navbar>
 
         <NavItem>
           <NavLink href="mailto://matt@denvercliffs.com" title="matt@denvercliffs.com">

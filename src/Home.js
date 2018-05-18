@@ -36,8 +36,11 @@ class Home extends Component {
           </div>
 
           <p>
-          This site is running serverless on AWS cloud.  It is currently static content (about to be converted to REACT), using the <a href="http://getbootstrap.com">bootstrap</a> framework built on jQuery. The articles and projects are published here, as well as on RPub, Shiny and GitHub.  I am currently working with the <a href="http://serverless.com">Serverless Framework</a> and various Docker containers for presenting R and Python work, however free options such as GitHub and Kaggle are also great places to share data work. Docker continues to amaze me as a part of a development toolkit,
-          I just located the <a href="https://hub.docker.com/r/openbridge/ob_pysh-db/">pysh-db</a> image which is a swiss-army knife of command line interface to any common Remote DB all for 400MB.
+          This site is hosted on a AWS S3 bucket running static content using the <a href="https://reactjs.org">REACT</a> and <a href="http://getbootstrap.com">bootstrap</a> frameworks. The articles and projects are published here, as well as on RPub, Shiny and GitHub.  I am currently working with the <a href="http://serverless.com">Serverless Framework</a> and various Docker containers for presenting R and Python work, however free options such as GitHub and Kaggle are also great places to share data work. 
+	  </p>
+	  <p>
+	  Docker continues to amaze me as a part of a development toolkit,
+          I just located the <a href="https://hub.docker.com/r/openbridge/ob_pysh-db/">pysh-db</a> image which is a swiss-army knife of command line interface to any common Remote DB all for 400MB.  We also use the <b>node:carbon</b> image to run an automated deploy pipeline for this website from a private GitHub to docker to publish to AWS.
           </p>
 
           </div>
