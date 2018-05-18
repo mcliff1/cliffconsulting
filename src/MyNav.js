@@ -24,8 +24,8 @@ class MyNav extends Component {
   render() {
     return (
       <div>
-      <Navbar color="white" toggleable>
-        <NavbarToggler right onClick={this.toggle} />
+      <Navbar color="white" expand>
+        <NavbarToggler right="true" onClick={this.toggle} />
         <NavbarBrand href="/"><Media object src="cliffconsulting_logo.gif" />Matt Cliff</NavbarBrand>
         <Collapse isOpen={this.state.isOpen} navbar>
         <Nav className="ml-auto" navbar>
