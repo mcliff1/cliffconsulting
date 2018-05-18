@@ -17,10 +17,10 @@ class App extends Component {
 
         <div>
         <Route exact path="/" component={Home} />
-        <Route path="/resume.html" component={Resume} />
-        <Route path="/projects.html" component={Projects} />
-        <Route path="/articles.html" component={Articles} />
-        <Route path="/contact.html" component={Contact} />
+        <Route path="/resume" component={Resume} />
+        <Route path="/projects" component={Projects} />
+        <Route path="/articles" component={Articles} />
+        <Route path="/contact" component={Contact} />
         </div>
       </div>
       </Router>
