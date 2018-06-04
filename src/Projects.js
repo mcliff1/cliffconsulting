@@ -46,9 +46,9 @@ class ProjectItem extends Component {
       <div className="card-deck mt4">
       <div className="card border border-info rounded">
         <div className="card-body">
-        <h5 className="card-title">{ proj.title }</h5>
-        <p className="card-text">{ proj.description }</p>
-        <a href="{ proj.href }" className="card-link">{ proj.link_name }</a>
+        <h5 className="card-title">{proj.title}</h5>
+        <p className="card-text">{proj.description}</p>
+        <a href={proj.href} className="card-link">{ proj.link_name }</a>
         <h6 className="card-subtitle text-muted">{ proj.tagline }</h6>
         </div>
       </div>
