@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Media,
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Media as StrapMedia,
   Nav, NavItem, NavLink } from 'reactstrap';
 import { NavLink as RRNavLink } from 'react-router-dom';
+import Media from 'react-media';
 import { FaEnvelope, FaLinkedinSquare, FaTwitter, FaGithub } from 'react-icons/lib/fa';
+
 
 
 
@@ -10,6 +12,7 @@ import { FaEnvelope, FaLinkedinSquare, FaTwitter, FaGithub } from 'react-icons/l
 class MyNav extends Component {
   constructor(props) {
     super(props);
+
     this.toggle = this.toggle.bind(this);
     this.state = {
       isOpen: false
@@ -22,15 +25,19 @@ class MyNav extends Component {
     });
   }
 
+
+
   render() {
     return (
       <div>
-      <Navbar color="white" expand>
-        <NavbarToggler right="true" onClick={this.toggle} />
-        <NavbarBrand href="/"><Media object src="cliffconsulting_logo.gif" />Matt Cliff</NavbarBrand>
+      <Media query="(max-width: 600px)">
+        {matches =>
+          matches ? ( /* small screen nav */
+      <Navbar color="white" light expand="md">
+        <NavbarBrand href="/"><StrapMedia object src="cliffconsulting_logo.gif" />Matt Cliff</NavbarBrand>
+        <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
-
-        <Nav fill navbar>
+        <Nav className="ml-auto" nav>
         <NavItem>
           <NavLink to="/" tag={RRNavLink}>Home</NavLink>
         </NavItem>
@@ -43,6 +50,31 @@ class MyNav extends Component {
         <NavItem>
           <NavLink to="/articles" tag={RRNavLink}>Articles</NavLink>
         </NavItem>
+
+        <NavItem>
+          <NavLink to="/contact" tag={RRNavLink}>Contact</NavLink>
+        </NavItem>
+        </Nav>
+        </Collapse>
+      </Navbar>
+
+    ) : (    /* now begin large document nav */
+      <Navbar color="white" className="nav" expand>
+        <NavbarBrand href="/"><StrapMedia object src="cliffconsulting_logo.gif" />Matt Cliff</NavbarBrand>
+        <Nav navbar>
+        <NavItem>
+          <NavLink to="/" tag={RRNavLink}>Home</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink to="/resume" tag={RRNavLink}>Resume</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink to="/projects" tag={RRNavLink}>Projects</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink to="/articles" tag={RRNavLink}>Articles</NavLink>
+        </NavItem>
+
         <NavItem>
           <NavLink to="/contact" tag={RRNavLink}>Contact</NavLink>
         </NavItem>
@@ -65,9 +97,10 @@ class MyNav extends Component {
         <FaGithub /></NavLink></NavItem>
 
         </Nav>
-        </Collapse>
       </Navbar>
 
+    )}
+      </Media>
       </div>
 
 

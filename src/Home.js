@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-
 class Home extends Component {
   render() {
     return (
 
 
           <div className="container-fluid">
+
 
           <div className="h3">
           About Me
@@ -36,7 +36,7 @@ class Home extends Component {
           </div>
 
           <p>
-          This site is hosted on a AWS S3 bucket running static content using the <a href="https://reactjs.org">REACT</a> and <a href="http://getbootstrap.com">bootstrap</a> frameworks. The articles and projects are published here, as well as on RPub, Shiny and GitHub.  I am currently working with the <a href="http://serverless.com">Serverless Framework</a> and various Docker containers for presenting R and Python work, however free options such as GitHub and Kaggle are also great places to share data work. 
+          This site is hosted on a AWS S3 bucket running static content using the <a href="https://reactjs.org">REACT</a> and <a href="http://getbootstrap.com">bootstrap</a> frameworks. The articles and projects are published here, as well as on RPub, Shiny and GitHub.  I am currently working with the <a href="http://serverless.com">Serverless Framework</a> and various Docker containers for presenting R and Python work, however free options such as GitHub and Kaggle are also great places to share data work.
 	  </p>
 	  <p>
 	  Docker continues to amaze me as a part of a development toolkit,
