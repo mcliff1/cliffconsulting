@@ -7,6 +7,4 @@ phases:
       - npm run build
 artifacts:
   files:
-    - index.html
-    - src/*
-    - public/*
+    - build/*
