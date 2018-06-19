@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 
 
-class Contact extends Component {
-  render() {
+const Contact () = () => {
     return (
 
 
@@ -17,7 +16,7 @@ class Contact extends Component {
              <i className="fa fa-envelope"></i>&nbsp;matt@denvercliffs.com<br />
              <i className="fa fa-phone"></i>&nbsp;720-280-6324<br />
              <a href="https://www.linkedin.com/in/matt-cliff-45a75b6/" target="_blank" rel="noopener noreferrer"  title="Linked In" >
-                <i className="fa fa-linkedin"></i></a>https://www.linkedin.com/in/matt-cliff-45a75b6/<br />
+                <i className="fa fa-linkedin"></i>https:\/\/www.linkedin.com/in/matt-cliff-45a75b6/</a>
           </address>
 
 
@@ -26,7 +25,6 @@ class Contact extends Component {
 
 
     );
-  }
 }
 
 export default Contact;
