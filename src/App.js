@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route  } from 'react-router-dom';
 import './App.css';
-import MyNav from './MyNav.js';
-import Home from './Home.js';
-import Articles from './Articles.js';
-import Projects from './Projects.js';
-import Resume from './Resume.js';
-import Contact from './Contact.js';
+import MyNav from './MyNav';
+import Home from './Home';
+import Articles from './Articles';
+import Projects from './Projects';
+import Resume from './Resume';
+import Contact from './Contact';
 
 class App extends Component {
   render() {

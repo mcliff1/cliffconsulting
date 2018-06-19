@@ -10,5 +10,4 @@ ReactDOM.render(<App />, document.getElementById('root'));
  * https://github.com/facebook/create-react-app/issues/2398
  */
 // also see http://bit.ly/2vJdu84
-//registerServiceWorker()
-
+registerServiceWorker()
