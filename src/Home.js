@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
 
-class Home extends Component {
-  render() {
+const Home = () => {
     return (
 
 
           <div className="container-fluid">
-
-
           <div className="h3">
           About Me
           </div>
 
           <p>
-          Hi, my name is Matt Cliff, I live in Denver with my wife and two primary school aged kids.  We enjoy hiking, camping, skiing, and cooking.
+          Hello, my name is Matt Cliff, I live in Denver with my wife and two primary school aged kids.  We enjoy hiking, camping, skiing, and cooking.
           </p>
 
           <p>
@@ -48,7 +45,6 @@ class Home extends Component {
 
 
     );
-  }
 }
 
 export default Home;
