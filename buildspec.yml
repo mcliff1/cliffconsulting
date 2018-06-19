@@ -9,3 +9,4 @@ artifacts:
   files:
     - index.html
     - src/*
+    - public/*
