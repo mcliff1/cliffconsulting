@@ -37,7 +37,7 @@ const Home = () => {
 	  </p>
 	  <p>
 	  Docker continues to amaze me as a part of a development toolkit,
-          I just located the <a href="https://hub.docker.com/r/openbridge/ob_pysh-db/">pysh-db</a> image which is a swiss-army knife of command line interface to any common Remote DB all for 400MB.  We also use the <b>node:carbon</b> image to run an automated deploy pipeline for this website from a private GitHub to docker to publish to AWS.
+          I just located the <a href="https://hub.docker.com/r/openbridge/ob_pysh-db/">pysh-db</a> image which is a swiss-army knife of command line interface to any common Remote DB all for 400MB.
           </p>
 
           </div>
