@@ -13,7 +13,7 @@ phases:
       - npm run build
   post_build:
     commands:
-      - aws s3 cp --recursive --acl public-read ./build s3://$WEB_BUCKET/
+      - "aws s3 cp --recursive --acl public-read ./build s3://$WEB_BUCKET/"
 
 artifacts:
   files:
