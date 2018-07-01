@@ -2,10 +2,6 @@
 #
 version: 0.2
 
-env:
-  variables:
-    WEB_BUCKET1: "cliffanalysis.com"
-
 
 phases:
 
@@ -17,11 +13,7 @@ phases:
       - npm run build
   post_build:
     commands:
-      - aws s3 cp --recursive --acl public-read ./build s3://cliffanalysis.com/
-      - echo $WEB_BUCKET
-      - echo $WEB_BUCKET1
-
-
+      - aws s3 cp --recursive --acl public-read ./build s3://$WEB_BUCKET/
 
 artifacts:
   files:
