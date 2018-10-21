@@ -196,7 +196,7 @@
                   ],
                   "Resource" : [
                     {"Fn::Join": ["", ["arn:aws:s3:::", {"Ref": "WebBucket"}, "*"]]},
-                    {"Fn::Join": ["", ["arn:aws:s3:::", {"Ref": "WebBucket"}, "*"]]}
+                    {"Fn::Join": ["", ["arn:aws:s3:::codepipeline*"]]}
                   ],
                   "Effect" : "Allow"
                 },
