@@ -10,6 +10,7 @@ phases:
   install:
     commands:
       - npm install
+      - aws cloudformation update-stack --stack-name $STACK_NAME --template-body file://base-cfn.json
   build:
     commands:
       - npm run build

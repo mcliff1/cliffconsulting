@@ -2,16 +2,39 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-
+## Build
 ran
-* npx create-react-app my-apps
+* `npx create-react-app my-apps`
 * - manually copied all the resources back one level (to root level)
-* npm install --save reactstrap boostrap
+* `npm install --save reactstrap boostrap`
 
 *Release Notes*
 - created develop branch in github;  **mcliff** AWS account has a deploy pipeline set up, that will push to cliff analysis S3 bucket.
 
 Well it appears for each branch I want to auto-build I need a seperate pipeline set up in *CodePipeline*, I modified the current to use the new **develop** branch.
+
+## Set up Build Environment
+
+To set up a new automated build enviroment in an AWS account, the *base-cfn.json* template will set up a stack that can trigger automated builds from a branch in *GitLab*. This is how production is hosted as well as supporting test environments and feature branches as needed.
+
+Cloud Formation Inputs:
+
+* Domain Name (must have hosted zone in Route53)
+* Hostname (must be unique in domain)
+* ARN for SSL cert
+* Branch (? can I template this to take the GitLab branch)
+* Repo (? shoudl I also template this in case someone forks it?)
+
+Template Creates:
+
+* S3 Bucket
+* CloudFront distribution (with custom domain)
+* Route 53 record for domain
+* CodeBuild project (including roles)
+* CodePipeline project (to hook up to any git branch of this repo)
+
+
+# Old Environment Notes
 
 ## stage
 
