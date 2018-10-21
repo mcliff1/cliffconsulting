@@ -6,6 +6,7 @@ version: 0.2
 env:
   variables:
     STACK_NAME: "cliffconsulting-develop"
+    #WEB_BUCKET: <from CodeBuild project>
 
 phases:
 
