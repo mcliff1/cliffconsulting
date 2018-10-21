@@ -3,9 +3,10 @@
 #
 version: 0.2
 
-env:
-  variables:
-    STACK_NAME: "cliffconsulting-develop"
+# sourced from CodeBuild project
+#env:
+  #variables:
+    #STACK_NAME: "cliffconsulting-develop"
     #WEB_BUCKET: <from CodeBuild project>
 
 phases:

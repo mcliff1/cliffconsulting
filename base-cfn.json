@@ -192,8 +192,16 @@
                 },
                 {
                   "Action" : [
-                    "s3:*",
-                    "logs:*"
+                    "s3:*"
+                  ],
+                  "Resource" : [
+                    {"Fn::Join": ["", ["arn:aws:s3:::", {"Ref": "WebBucket"}, "*"]]}
+                  ],
+                  "Effect" : "Allow"
+                },
+                {
+                  "Action" : [
+                    "cloudformation:*"
                   ],
                   "Resource" : "*",
                   "Effect" : "Allow"
