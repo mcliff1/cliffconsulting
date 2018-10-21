@@ -9,8 +9,9 @@ ran
 * npm install --save reactstrap boostrap
 
 *Release Notes*
-- created develop branch in github;  **mcliff** AWS account has a deploy pipeline set up
+- created develop branch in github;  **mcliff** AWS account has a deploy pipeline set up, that will push to cliff analysis S3 bucket.
 
+Well it appears for each branch I want to auto-build I need a seperate pipeline set up in *CodePipeline*, I modified the current to use the new **develop** branch.
 
 ## stage
 
