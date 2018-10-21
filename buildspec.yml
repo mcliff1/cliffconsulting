@@ -31,25 +31,27 @@ phases:
             --template-body file://base-cfn.json \
             --capabilities CAPABILITY_IAM \
             --parameters ParameterKey=WebHostName,UsePreviousValue=true
+      #- this gets the change set running
       - |
         CHANGE_SET=$(aws cloudformation describe-change-set \
             --stack-name $STACK_NAME \
             --change-set-name ci-test-if-changes | \
                 jq -r '.Changes[]')
       - |
+        if [ -z $CHANGE_SET ]
         aws cloudformation delete-change-set \
             --stack-name $STACK_NAME \
             --change-set-name ci-test-if-changes
       - echo $CHANGE_SET
-      - |
-        if [ ! -z $CHANGE_SET ]
-        then
-          aws cloudformation update-stack \
-              --stack-name $STACK_NAME \
-              --template-body file://base-cfn.json \
-              --capabilities CAPABILITY_IAM \
-              --parameters ParameterKey=WebHostName,UsePreviousValue=true
-        fi
+      # - |
+      #   if [ ! -z $CHANGE_SET ]
+      #   then
+      #     aws cloudformation update-stack \
+      #         --stack-name $STACK_NAME \
+      #         --template-body file://base-cfn.json \
+      #         --capabilities CAPABILITY_IAM \
+      #         --parameters ParameterKey=WebHostName,UsePreviousValue=true
+      #   fi
       - npm install
   #pre_build:
   build:
