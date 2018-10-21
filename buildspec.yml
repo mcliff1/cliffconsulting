@@ -16,15 +16,39 @@ phases:
       # no stack update currently returns 255 status code
       #  updated to 1.16 awscli to resolve
       - id
-      - pip install --upgrade --user awscli
+      #- pip install --upgrade --user awscli
       - aws --version
       - echo $STACK_NAME
       - |
-        aws cloudformation update-stack \
+        aws cloudformation validate-template \
+            --template-body file://base-cfn.json
+      # this is to check if any changes first
+      - |
+        aws cloudformation create-change-set \
             --stack-name $STACK_NAME \
+            --change-set-name ci-test-if-changes \
             --template-body file://base-cfn.json \
             --capabilities CAPABILITY_IAM \
             --parameters ParameterKey=WebHostName,UsePreviousValue=true
+      - |
+        CHANGE_SET=$(aws cloudformation describe-change-set \
+            --stack-name $STACK_NAME \
+            --change-set-name ci-test-if-changes | \
+                jq -r '.Changes[]')
+      - |
+        aws cloudformation delete-change-set \
+            --stack-name $STACK_NAME \
+            --change-set-name ci-test-if-changes
+      - echo $CHANGE_SET
+      - |
+        if [ -z $CHANGE_SET ]
+        then
+          aws cloudformation update-stack \
+              --stack-name $STACK_NAME \
+              --template-body file://base-cfn.json \
+              --capabilities CAPABILITY_IAM \
+              --parameters ParameterKey=WebHostName,UsePreviousValue=true
+        fi
       - npm install
   #pre_build:
   build:
