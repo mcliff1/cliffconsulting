@@ -13,13 +13,17 @@ phases:
 
   install:
     commands:
+      - aws --version
       - echo $STACK_NAME
+      # no stack update currently returns 255 status code
+      #  the exit 0 at the end swallows this
       - |
         aws cloudformation update-stack \
             --stack-name $STACK_NAME \
             --template-body file://base-cfn.json \
             --capabilities CAPABILITY_IAM \
-            --parameters ParameterKey=WebHostName,UsePreviousValue=true
+            --parameters ParameterKey=WebHostName,UsePreviousValue=true \
+            || exit 0
       - npm install
   #pre_build:
   build:
