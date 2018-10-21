@@ -1,3 +1,5 @@
+# Cliff Consulting Web Page
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 
@@ -5,6 +7,9 @@ ran
 * npx create-react-app my-apps
 * - manually copied all the resources back one level (to root level)
 * npm install --save reactstrap boostrap
+
+*Release Notes*
+- created develop branch in github;  **mcliff** AWS account has a deploy pipeline set up
 
 
 ## stage
