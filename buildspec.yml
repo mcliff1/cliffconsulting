@@ -16,6 +16,7 @@ phases:
       # no stack update currently returns 255 status code
       #  updated to 1.16 awscli to resolve
       - id
+      - apt-get update && apt install -y jq
       #- pip install --upgrade --user awscli
       - aws --version
       - echo $STACK_NAME
