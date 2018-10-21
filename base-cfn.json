@@ -223,6 +223,10 @@
             {
               "Name" : "WEB_BUCKET",
               "Value" : { "Ref" : "WebBucket" }
+            },
+            {
+              "Name" : "STACK_NAME",
+              "Value" : { "Ref" : "AWS::StackName" }
             }
           ]
         },
