@@ -222,7 +222,7 @@
         "Name" : { "Ref" : "AWS::StackName" },
         "Description" : "Application Code Build and Deployment",
         "Artifacts" : {
-          "Type" : "NO_ARTIFACTS"
+          "Type" : "CODEPIPELINE"
         },
         "Environment" : {
           "Type" : "LINUX_CONTAINER",
