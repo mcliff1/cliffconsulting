@@ -42,7 +42,7 @@ phases:
             --change-set-name ci-test-if-changes
       - echo $CHANGE_SET
       - |
-        if [ -z $CHANGE_SET ]
+        if [ ! -z $CHANGE_SET ]
         then
           aws cloudformation update-stack \
               --stack-name $STACK_NAME \
