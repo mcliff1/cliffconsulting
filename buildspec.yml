@@ -1,5 +1,7 @@
 # uses aws/codebuild/nodejs:8.11.0
 #
+# this will run `npm run build` and sync the output to S3
+#
 version: 0.2
 
 
