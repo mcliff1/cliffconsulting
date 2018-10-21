@@ -17,6 +17,17 @@ TODO - need to address security warning with node versions; run update and repub
 
 TODO -  add to codebuild a notification to the SNS when it fails (or succeeds)
 
+TODO - I am ready to create a second environment
+
+cliffconsulting-prod  (url prod)
+verify content at https://prod.cliffconsulting.com/
+make change to dev and push it
+verify dev changed, but not production
+pull request from dev to prod; verify that change happened
+
+
+
+
 ## Set up Build Environment
 
 To set up a new automated build enviroment in an AWS account, the *base-cfn.json* template will set up a stack that can trigger automated builds from a branch in *GitLab*. This is how production is hosted as well as supporting test environments and feature branches as needed.
