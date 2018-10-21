@@ -195,6 +195,7 @@
                     "s3:*"
                   ],
                   "Resource" : [
+                    {"Fn::Join": ["", ["arn:aws:s3:::", {"Ref": "WebBucket"}, "*"]]},
                     {"Fn::Join": ["", ["arn:aws:s3:::", {"Ref": "WebBucket"}, "*"]]}
                   ],
                   "Effect" : "Allow"
@@ -221,7 +222,7 @@
         "Name" : { "Ref" : "AWS::StackName" },
         "Description" : "Application Code Build and Deployment",
         "Artifacts" : {
-          "Type" : "CODEPIPELINE"
+          "Type" : "NO_ARTIFACTS"
         },
         "Environment" : {
           "Type" : "LINUX_CONTAINER",

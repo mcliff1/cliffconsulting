@@ -13,18 +13,18 @@ phases:
 
   install:
     commands:
+      # no stack update currently returns 255 status code
+      #  updated to 1.16 awscli to resolve
+      - id
       - pip install --upgrade --user awscli
       - aws --version
       - echo $STACK_NAME
-      # no stack update currently returns 255 status code
-      #  the exit 0 at the end swallows this
       - |
         aws cloudformation update-stack \
             --stack-name $STACK_NAME \
             --template-body file://base-cfn.json \
             --capabilities CAPABILITY_IAM \
-            --parameters ParameterKey=WebHostName,UsePreviousValue=true \
-            || exit 0
+            --parameters ParameterKey=WebHostName,UsePreviousValue=true
       - npm install
   #pre_build:
   build:
