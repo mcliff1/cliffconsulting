@@ -13,7 +13,7 @@ phases:
   install:
     commands:
       - echo $STACK_NAME
-      - aws cloudformation update-stack --stack-name $STACK_NAME --template-body file://base-cfn.json
+      - aws cloudformation update-stack --stack-name $STACK_NAME --template-body file://base-cfn.json --parameters ParameterKey=WebHostName,UsePreviousValue=true
       - npm install
   #pre_build:
   build:
