@@ -13,6 +13,7 @@ phases:
 
   install:
     commands:
+      - pip install --upgrade --user awscli
       - aws --version
       - echo $STACK_NAME
       # no stack update currently returns 255 status code
