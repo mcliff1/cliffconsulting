@@ -13,6 +13,8 @@ ran
 
 Well it appears for each branch I want to auto-build I need a seperate pipeline set up in *CodePipeline*, I modified the current to use the new **develop** branch.
 
+TODO - need to address security warning with node versions; run update and republish everything.
+
 ## Set up Build Environment
 
 To set up a new automated build enviroment in an AWS account, the *base-cfn.json* template will set up a stack that can trigger automated builds from a branch in *GitLab*. This is how production is hosted as well as supporting test environments and feature branches as needed.

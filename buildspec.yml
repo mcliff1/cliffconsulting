@@ -1,16 +1,19 @@
 # uses aws/codebuild/nodejs:8.11.0
-#
-# this will run `npm run build` and sync the output to S3
+# cliff consulting build spec# this will run `npm run build` and sync the output to S3
 #
 version: 0.2
 
+env:
+  variables:
+    STACK_NAME: cliffconsulting-develop
 
 phases:
 
   install:
     commands:
-      - npm install
       - aws cloudformation update-stack --stack-name $STACK_NAME --template-body file://base-cfn.json
+      - npm install
+  #pre_build:
   build:
     commands:
       - npm run build
@@ -22,3 +25,7 @@ artifacts:
   files:
     - "**/*"
   base-directory: build
+
+# cache:
+#   paths:
+#     - ?? npm install stuff?
