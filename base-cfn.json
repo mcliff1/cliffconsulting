@@ -139,7 +139,74 @@
           "DNSName" : { "Fn::GetAtt" : [ "WebCDN" , "DomainName"]}
         }
       }
+    },
+
+
+
+
+
+
+    "CodeBuildRole" : {
+      "Type" : "AWS::IAM::Role",
+      "Properties" : {
+        "AssumeRolePolicyDocument" : {
+          "Statement" : [
+            {
+              "Effect" : "Allow",
+              "Principal" : {
+                "Service" : [
+                  "codebuild.amazonaws.com"
+                ]
+              },
+              "Action": [
+                "sts:AssumeRole"
+              ]
+            }
+          ]
+        },
+        "Path" : "/",
+        "Policies" : [
+          {
+            "PolicyName" : "codebuild-service",
+            "PolicyDocument" : {
+              "Version" : "2012-10-17",
+              "Statement" : [
+                {
+                  "Action" : [
+                    "codebuild:*"
+                  ],
+                  "Resource" : "*",
+                  "Effect" : "Allow"
+                },
+                {
+                  "Action" : [
+                    "s3:GetObject",
+                    "s3:GetObjectVersion",
+                    "s3:GetBucketVersioning"
+                  ],
+                  "Resource" : "*",
+                  "Effect" : "Allow"
+                },
+                {
+                  "Action" : [
+                    "s3:*",
+                    "logs:*"
+                  ],
+                  "Resource" : "*",
+                  "Effect" : "Allow"
+                }
+              ]
+            }
+          }
+        ]
+      }
     }
+
+
+
+
+
+
 
 
   },

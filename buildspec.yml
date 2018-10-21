@@ -5,12 +5,13 @@ version: 0.2
 
 env:
   variables:
-    STACK_NAME: cliffconsulting-develop
+    STACK_NAME: "cliffconsulting-develop"
 
 phases:
 
   install:
     commands:
+      - echo $STACK_NAME
       - aws cloudformation update-stack --stack-name $STACK_NAME --template-body file://base-cfn.json
       - npm install
   #pre_build:
