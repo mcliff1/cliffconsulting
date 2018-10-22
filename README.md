@@ -56,6 +56,9 @@ Template Creates:
 * CodePipeline project (to hook up to any git branch of this repo)
 
 
+Current Status-
+ Code Pipeline (Build) is failing on Develop; the very last step about copying the output;  I just overrode the Develop role to have full S3 access to see if that helps;  I suspect the issue is that there really is no Build artifact,  and that seemed to just work!
+
 # Old Environment Notes
 
 ## stage
