@@ -31,34 +31,29 @@ phases:
             --template-body file://base-cfn.json \
             --capabilities CAPABILITY_IAM \
             --parameters ParameterKey=WebHostName,UsePreviousValue=true
-      #- this gets the change set running
-      - |
+      - |  # loop until the change set is created
+        while true
+        do
+          CHANGE_SET_STATUS=$(aws cloudformation describe-change-set \
+              --stack-name $STACK_NAME \
+              --change-set-name ci-test-if-changes | \
+                  jq -r '.Status')
+          echo $CHANGE_SET_STATUS
+          if [ "$CHANGE_SET_STATUS" == "CREATE_COMPLETE" ]
+          then
+            break
+          fi
+          sleep 1
+        done
         CHANGE_SET=$(aws cloudformation describe-change-set \
             --stack-name $STACK_NAME \
             --change-set-name ci-test-if-changes | \
                 jq -r '.Changes[]')
-      - echo $CHANGE_SET
-      # should I run execute-change-set if it exists?
-      # i think I have to wait until it's created completed
-      - |
-        aws cloudformation describe-change-set \
+        aws cloudformation delete-change-set \
             --stack-name $STACK_NAME \
             --change-set-name ci-test-if-changes
-      # - |
-      #   while true
-      #   do
-      #     # if VAR then break
-      #     sleep 1
-      #   done
-
-      - | # if empty variable (e.g. no changes)
-        if [ -z $CHANGE_SET ]
-        then
-          aws cloudformation delete-change-set \
-              --stack-name $STACK_NAME \
-              --change-set-name ci-test-if-changes
-        fi
-      - |
+      - echo $CHANGE_SET
+      - |  # if we are non-empty go ahead and run the update
         if [ ! -z $CHANGE_SET ]
         then
           aws cloudformation update-stack \
