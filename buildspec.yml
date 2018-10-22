@@ -38,6 +38,13 @@ phases:
             --change-set-name ci-test-if-changes | \
                 jq -r '.Changes[]')
       - echo $CHANGE_SET
+      # should I run execute-change-set if it exists?
+      # i think I have to wait until it's created completed
+      - |
+        aws cloudformation describe-change-set \
+            --stack-name $STACK_NAME \
+            --change-set-name ci-test-if-changes | \
+                jq -r '.'
       - |
         if [ -z $CHANGE_SET ]
         then
