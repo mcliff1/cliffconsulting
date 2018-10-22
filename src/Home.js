@@ -11,6 +11,7 @@ const Home = () => {
 
           <p>
           Hello, this is Matt Cliff&apos;s website. Matt has been working in Denver, Colorado for the past 20 years in the IT field.
+          Currently, Matt has been doing contract and freelance work focusing on python and AWS Cloud.
           </p>
 
           <p>

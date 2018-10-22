@@ -17,6 +17,24 @@ TODO - need to address security warning with node versions; run update and repub
 
 TODO -  add to codebuild a notification to the SNS when it fails (or succeeds)
 
+TODO - add code pipeline setup to the stack  (match the stack-name)
+
+(console) run new stack one-time - this can take 20-30 m due to cloudfront
+(github) create the new branch
+(console) manually create the code-pipeline to connect to a new branch - this starts the build right away
+cliffconsulting-prod  (url prod)
+verify content at https://prod.cliffconsulting.com/
+... all checked out to here
+ noticed that we are accepting HTTP going to disable that in dev
+
+
+make change to dev and push it
+verify dev changed, but not production
+pull request from dev to prod; verify that change happened
+
+
+
+
 ## Set up Build Environment
 
 To set up a new automated build enviroment in an AWS account, the *base-cfn.json* template will set up a stack that can trigger automated builds from a branch in *GitLab*. This is how production is hosted as well as supporting test environments and feature branches as needed.
