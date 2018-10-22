@@ -1,13 +1,75 @@
 # uses aws/codebuild/nodejs:8.11.0
+# cliff consulting build spec# this will run `npm run build` and sync the output to S3
 #
 version: 0.2
 
+# sourced from CodeBuild project
+#env:
+  #variables:
+    #STACK_NAME: "cliffconsulting-develop"
+    #WEB_BUCKET: <from CodeBuild project>
 
 phases:
 
   install:
     commands:
+      # no stack update currently returns 255 status code
+      #  updated to 1.16 awscli to resolve
+      - id
+      - ps
+      - apt-get update && apt install -y jq
+      #- pip install --upgrade --user awscli
+      - aws --version
+      - echo $STACK_NAME
+      - |
+        aws cloudformation validate-template \
+            --template-body file://base-cfn.json
+      # 10/22/2018 this wasn't working very smoothly
+      #    for now just manually update the stack when it needs changing
+      # # this is to check if any changes first
+      # - |
+      #   aws cloudformation create-change-set \
+      #       --stack-name $STACK_NAME \
+      #       --change-set-name ci-test-if-changes \
+      #       --template-body file://base-cfn.json \
+      #       --capabilities CAPABILITY_IAM \
+      #       --parameters ParameterKey=WebHostName,UsePreviousValue=true \
+      #                    ParameterKey=GitHubOAuthToken,UsePreviousValue=true \
+      #                    ParameterKey=GitHubBranch,UsePreviousValue=true
+      # - |  # loop until the change set is created
+      #   while true
+      #   do
+      #     CHANGE_SET_STATUS=$(aws cloudformation describe-change-set \
+      #         --stack-name $STACK_NAME \
+      #         --change-set-name ci-test-if-changes | \
+      #             jq -r '.Status')
+      #     echo $CHANGE_SET_STATUS
+      #     if [ "x$CHANGE_SET_STATUS" = "xCREATE_COMPLETE" ]
+      #     then
+      #       break
+      #     fi
+      #     sleep 1
+      #   done
+      #   CHANGE_SET=$(aws cloudformation describe-change-set \
+      #       --stack-name $STACK_NAME \
+      #       --change-set-name ci-test-if-changes | \
+      #           jq -r '.Changes[]')
+      # - | # always run delete in seperate command
+      #   aws cloudformation delete-change-set \
+      #       --stack-name $STACK_NAME \
+      #       --change-set-name ci-test-if-changes
+      # - echo $CHANGE_SET
+      # - |  # if we are non-empty go ahead and run the update
+      #   if [ ! -z $CHANGE_SET ]
+      #   then
+      #     aws cloudformation update-stack \
+      #         --stack-name $STACK_NAME \
+      #         --template-body file://base-cfn.json \
+      #         --capabilities CAPABILITY_IAM \
+      #         --parameters ParameterKey=WebHostName,UsePreviousValue=true
+      #   fi
       - npm install
+  #pre_build:
   build:
     commands:
       - npm run build
@@ -19,3 +81,7 @@ artifacts:
   files:
     - "**/*"
   base-directory: build
+
+# cache:
+#   paths:
+#     - ?? npm install stuff?
