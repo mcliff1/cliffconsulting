@@ -33,7 +33,9 @@ phases:
       #       --change-set-name ci-test-if-changes \
       #       --template-body file://base-cfn.json \
       #       --capabilities CAPABILITY_IAM \
-      #       --parameters ParameterKey=WebHostName,UsePreviousValue=true
+      #       --parameters ParameterKey=WebHostName,UsePreviousValue=true \
+      #                    ParameterKey=GitHubOAuthToken,UsePreviousValue=true \
+      #                    ParameterKey=GitHubBranch,UsePreviousValue=true
       # - |  # loop until the change set is created
       #   while true
       #   do

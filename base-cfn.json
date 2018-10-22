@@ -20,7 +20,20 @@
       "Description" : "ARN for the Web ACM (must be created in us-east-1)",
       "Type" : "String",
       "Default" : "arn:aws:acm:us-east-1:401731807239:certificate/a99a7492-e576-4912-b5c8-896210012328"
+    },
+    "GitHubOAuthToken" : {
+      "Description" : "Token for GitHub repository to include in Code Pipeline",
+      "Type" : "String",
+      "Default" : ""
+    },
+    "GitHubBranch" : {
+      "Description" : "Name of branch to monitor for codepipeline",
+      "Type" : "String",
+      "AllowedValues" : [ "develop", "prod" ]
     }
+
+
+
   },
   "Resources": {
     "SNSTopic" : {
@@ -289,7 +302,8 @@
               "Statement" : [
                 {
                   "Action" : [
-                    "codepipeline:*"
+                    "codepipeline:*",
+                    "codebuild:*"
                   ],
                   "Resource" : "*",
                   "Effect" : "Allow"
@@ -336,6 +350,13 @@
                   "Owner" : "ThirdParty",
                   "Version" : "1",
                   "Provider" : "GitHub"
+                },
+                "Configuration" : {
+                  "Owner" : "mcliff1",
+                  "Repo" : "cliffconsulting",
+                  "PollForSourceChanges" : "false",
+                  "Branch" : {"Ref" : "GitHubBranch"},
+                  "OAuthToken" : {"Ref" : "GitHubOAuthToken" }
                 },
                 "OutputArtifacts" : [
                   { "Name" : "SourceOutput" }
