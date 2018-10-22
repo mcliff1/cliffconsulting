@@ -43,24 +43,30 @@ phases:
       - |
         aws cloudformation describe-change-set \
             --stack-name $STACK_NAME \
-            --change-set-name ci-test-if-changes | \
-                jq -r '.'
-      - |
+            --change-set-name ci-test-if-changes
+      # - |
+      #   while true
+      #   do
+      #     # if VAR then break
+      #     sleep 1
+      #   done
+
+      - | # if empty variable (e.g. no changes)
         if [ -z $CHANGE_SET ]
         then
           aws cloudformation delete-change-set \
               --stack-name $STACK_NAME \
               --change-set-name ci-test-if-changes
         fi
-      # - |
-      #   if [ ! -z $CHANGE_SET ]
-      #   then
-      #     aws cloudformation update-stack \
-      #         --stack-name $STACK_NAME \
-      #         --template-body file://base-cfn.json \
-      #         --capabilities CAPABILITY_IAM \
-      #         --parameters ParameterKey=WebHostName,UsePreviousValue=true
-      #   fi
+      - |
+        if [ ! -z $CHANGE_SET ]
+        then
+          aws cloudformation update-stack \
+              --stack-name $STACK_NAME \
+              --template-body file://base-cfn.json \
+              --capabilities CAPABILITY_IAM \
+              --parameters ParameterKey=WebHostName,UsePreviousValue=true
+        fi
       - npm install
   #pre_build:
   build:
