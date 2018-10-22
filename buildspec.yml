@@ -37,12 +37,14 @@ phases:
             --stack-name $STACK_NAME \
             --change-set-name ci-test-if-changes | \
                 jq -r '.Changes[]')
+      - echo $CHANGE_SET
       - |
         if [ -z $CHANGE_SET ]
-        aws cloudformation delete-change-set \
-            --stack-name $STACK_NAME \
-            --change-set-name ci-test-if-changes
-      - echo $CHANGE_SET
+        then
+          aws cloudformation delete-change-set \
+              --stack-name $STACK_NAME \
+              --change-set-name ci-test-if-changes
+        fi
       # - |
       #   if [ ! -z $CHANGE_SET ]
       #   then
