@@ -34,7 +34,11 @@ const Home = () => {
           </div>
 
           <p>
-          This site is hosted on a AWS S3 bucket running static content using the <a href="https://reactjs.org">REACT</a> and <a href="http://getbootstrap.com">bootstrap</a> frameworks. The articles and projects are published here, as well as on RPub, Shiny and GitHub.  I am currently working with the <a href="http://serverless.com">Serverless Framework</a> and various Docker containers for presenting R and Python work, however free options such as GitHub and Kaggle are also great places to share data work.
+
+          The site is hosted using AWS CloudFront serving static content from a S3 bucket running static content using the <a href="https://reactjs.org">REACT</a> and <a href="http://getbootstrap.com">bootstrap</a> frameworks.
+          The source is managed in <a href="https://github.com/mcliff1/cliffconsulting">GitHub</a> and has a cloud formation stack that can be run to create a full AWS stack for any branch, including a CI pipeline to automatically deploy.
+          The articles and projects are published here, as well as on RPub, Shiny and GitHub.
+          I am currently working with the <a href="http://serverless.com">Serverless Framework</a> and various Docker containers for presenting R and Python work, however free options such as GitHub and Kaggle are also great places to share data work.
 	  </p>
 	  <p>
 	  Docker continues to amaze me as a part of a development toolkit,

@@ -17,22 +17,10 @@ TODO - need to address security warning with node versions; run update and repub
 
 TODO -  add to codebuild a notification to the SNS when it fails (or succeeds)
 
-TODO - add code pipeline setup to the stack  (match the stack-name)
-
 (console) run new stack one-time - this can take 20-30 m due to cloudfront
 (github) create the new branch
-(console) manually create the code-pipeline to connect to a new branch - this starts the build right away
+(console) manually connect to a new branch - this starts the build right away  (did this in develop only)
 cliffconsulting-prod  (url prod)
-verify content at https://prod.cliffconsulting.com/
-... all checked out to here
- noticed that we are accepting HTTP going to disable that in dev
-
-
-make change to dev and push it
-verify dev changed, but not production
-pull request from dev to prod; verify that change happened
-
-
 
 
 ## Set up Build Environment
@@ -55,6 +43,9 @@ Template Creates:
 * CodeBuild project (including roles)
 * CodePipeline project (to hook up to any git branch of this repo)
 
+
+Current Status-
+ Code Pipeline (Build) is failing on Develop; the very last step about copying the output;  I just overrode the Develop role to have full S3 access to see if that helps;  I suspect the issue is that there really is no Build artifact,  and that seemed to just work!
 
 # Old Environment Notes
 
