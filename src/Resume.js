@@ -2,6 +2,19 @@ import React, { Component } from 'react';
 import { Collapse, Card, Button, CardBody } from 'reactstrap';
 
 
+class ResumeStrongList extends Component {
+  render() {
+    return (
+      <div>
+      <strong>title</strong>
+      <ul>
+        <li>for each element in list</li>
+      </ul>
+      </div>
+    )
+  }
+}
+
 
 class ResumeSection extends Component {
   constructor(props) {
@@ -113,6 +126,17 @@ class Resume extends Component {
 
 
                           <ul>
+                          <li><strong>SOFTWARE ENGINEER | Nordstrom Credit | 07/2018 – 1/2019</strong>
+                            <ul>
+                              <li>Refactor pythong code delivered by 3rd party vendor for AWS Lex Chatbot</li>
+                              <li>Build CloudFormation templates and CI pipeline (GitLab) to automate deploy for Chat and API Layers</li>
+                              <li>Developed Unix scripts to automated reporting, monitoring and build tasks</li>
+                              <li>Built docker images to support CI flow</li>
+                              <li>Used AWS Athena for reporting to perform data mining on legacy application logs</li>
+                              <li>Consult and advise on AWS services including API Gateway, DynamoDB, SNS, Lex, Lambda, Athena, S3, CloudFormation</li>
+                              <li>Developed reporting framework that leverages Lambda to kick off EC2 instance for ETL process on Cloudwatch logs</li>
+                            </ul>
+                          </li>
                             <li><strong>TECHNOLOGY MANAGER | WELLS FARGO | 08/2007 – 10/2017</strong>
                               <ul>
                                 <li>Communicated with senior management and key product owners and stakeholders</li>
