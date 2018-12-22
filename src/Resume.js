@@ -126,19 +126,20 @@ class Resume extends Component {
             <ul>
               <li><strong>SOFTWARE ENGINEER | Nordstrom Credit | 07/2018 – current</strong>
                 <ul>
-                  <li>Refactor pythong code delivered by 3rd party vendor for AWS Lex Chatbot</li>
+                  <li>Refactor python code delivered by 3rd party vendor for AWS Lex Chatbot</li>
                   <li>Build CloudFormation templates and CI pipeline (GitLab) to automate deploy for Chat and API Layers</li>
                   <li>Developed Unix scripts to automated reporting, monitoring and build tasks</li>
                   <li>Built docker images to support CI flow</li>
                   <li>Used AWS Athena for reporting to perform data mining on legacy application logs</li>
                   <li>Consult and advise on AWS services including API Gateway, DynamoDB, SNS, Lex, Lambda, Athena, S3, CloudFormation</li>
-                  <li>Developed reporting framework that leverages Lambda to kick off EC2 instance for ETL process on Cloudwatch logs</li>
+                  <li>Developed reporting framework that leverages Lambda to kick off EC2 spot instance for ETL process on Cloudwatch logs</li>
                 </ul>
               </li>
               <li>
                 <strong>INDEPENDENT CONSULTANT | Cliff Consulting | 12/2017 – 07/2018</strong>
                 <ul>
                   <li>AWS and Python support</li>
+                  <li>Developed Serverless framework to generate MP3 files using ffmpeg</li>
                   <li>Build and support CI pipeline on AWS for ECS Cluster Service running .NET code on Docker with autoscaling for Backend and Serverless Angular code for the front end</li>
                 </ul>
               </li>
@@ -147,9 +148,10 @@ class Resume extends Component {
                   <li>Communicated with senior management and key product owners and stakeholders</li>
                   <li>Managed Java, Mainframe (Hogan), and C# teams; with number of (FTE) reports ranging from 8 to 40</li>
                   <li>Managed Department and application budgets, vendor invoice, staff planning, forecasting and cost allocation for $2mm – $4mm budgets</li>
-                  <li>Interviewed and hired over 15 employees, and 50 contract non-employee positions</li>
+                  <li>Interviewed and hired over 15 employees, and over 50 contract positions</li>
                   <li>Managed critical 24x7 applications with disbursed teams in US and India</li>
                   <li>Developed and reviewed BCP(Disaster Recovery) and Security Plans for key operational applications</li>
+                  <li>Responsible for annual $2 million department budgets</li>
 
                 </ul>
               </li>
