@@ -22,6 +22,9 @@ TODO -  add to codebuild a notification to the SNS when it fails (or succeeds)
 (console) manually connect to a new branch - this starts the build right away  (did this in develop only)
 cliffconsulting-prod  (url prod)
 
+## Search Engine Optimization
+
+Added [Google Search](https://search.google.com/search-console/) token file -- `google0f279037173f0494.html`  along with sitemap.xml and robots.txt (12/22/18)
 
 ## Set up Build Environment
 
