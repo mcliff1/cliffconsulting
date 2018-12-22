@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /content
+Disallow: /wp-login.php
+
+Sitemap: https://www.cliffconsulting.com/sitemap.xml
