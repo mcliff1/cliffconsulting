@@ -56,7 +56,7 @@ class Resume extends Component {
 
 
           <div className="h3">Resume</div>
-          <p><a href="/mcliff_resume_2018_04.pdf">PDF</a></p>
+          <p><a href="/mcliff_resume_2018_09.pdf">PDF</a></p>
 
 
           <ResumeSection header="Objective" startOpen={true}>
@@ -126,7 +126,7 @@ class Resume extends Component {
             <ul>
               <li><strong>SOFTWARE ENGINEER | Nordstrom Credit | 07/2018 – current</strong>
                 <ul>
-                  <li>Refactor python code delivered by 3rd party vendor for AWS Lex Chatbot</li>
+                  <li>Refactor python code delivered by 3rd party vendor for AWS Lex Chatbot, upgrade from 2.7 to 3.6</li>
                   <li>Build CloudFormation templates and CI pipeline (GitLab) to automate deploy for Chat and API Layers</li>
                   <li>Developed Unix scripts to automated reporting, monitoring and build tasks</li>
                   <li>Built docker images to support CI flow</li>
