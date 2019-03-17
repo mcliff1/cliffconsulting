@@ -2,6 +2,7 @@
 
 This repository supports the [cliffconsulting.com](https://cliffconsulting.com/) web site. This is a serverless site to support Matt Cliff's career and freelance work.
 
+(3/17) the remote was changed
 
 ## REACT/NodeJS
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).ran
