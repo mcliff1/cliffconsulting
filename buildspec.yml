@@ -76,6 +76,9 @@ phases:
   post_build:
     commands:
       - aws s3 sync ./build s3://$WEB_BUCKET/ --delete --acl public-read
+      - SNS_TOPIC=$( aws cloudformation describe-stack-resource --stack-name $STACK_NAME --logical-resource-id SNSTopic | jq -r '.StackResourceDetail.PhysicalResourceId' )
+      - aws sns publish --target-arn $SNS_TOPIC --message 'Environment Build completed'
+
 
 artifacts:
   files:
