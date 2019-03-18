@@ -124,7 +124,12 @@ class Resume extends Component {
 
           <ResumeSection header="Experience">
             <ul>
-              <li><strong>SOFTWARE ENGINEER | Nordstrom Credit | 07/2018 – current</strong>
+              <li><strong>Cloud Architect | BenefitSolver | 03/2019 – current</strong>
+                <ul>
+                  <li>Architect AWS Serverless solution</li>
+                </ul>
+              </li>
+              <li><strong>SOFTWARE ENGINEER | Nordstrom Credit | 07/2018 – 02/2019</strong>
                 <ul>
                   <li>Refactor python code delivered by 3rd party vendor for AWS Lex Chatbot, upgrade from 2.7 to 3.6</li>
                   <li>Build CloudFormation templates and CI pipeline (GitLab) to automate deploy for Chat and API Layers</li>
