@@ -11,7 +11,7 @@
     "react-dom": "^16.8.4",
     "react-icons": "^2.2.7",
     "react-media": "^1.9.2",
-    "react-router-dom": "^4.4.0",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "^3.0.1",
     "reactstrap": "^6.5.0"
   },
@@ -26,5 +26,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "typescript": "^3.5.1"
+  }
 }
