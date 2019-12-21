@@ -2,6 +2,15 @@
 
 This repository supports the [cliffconsulting.com](https://cliffconsulting.com/) web site. This is a serverless site to support Matt Cliff's career and freelance work.
 
+(12/21/19) make a new s3-cfn-dns stack that I can separate from the base; the base will make the pipeline for a given environment.
+
+We will have a pipeline with 1 source (this Git);
+1 overall build group;
+   step1 - deploy the s3-cdn-dns stack
+   step2 publish the Node site
+
+THE ONLY stacks I should ever manually deploy are Pipeline stacks;  or CodeBuild stacks (if I am too lazy for pipeline).
+
 
 (6/7/19) updated react-router-dom (from 4.4.0 which doesnt exit) to 5.0.1
 

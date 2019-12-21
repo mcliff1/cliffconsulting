@@ -374,6 +374,23 @@
             "Name" : "Build",
             "Actions" : [
               {
+                "Name" : "UpdateStack",
+                "InputArtifacts" : [
+                  {"Name" : "SourceOutput"}
+                ],
+                "ActionTypeId" : {
+                  "Category" : "Deploy",
+                  "Owner" : "AWS",
+                  "Version" : "1",
+                  "Provider" : "CloudFormation"
+                },
+                "Configuration" : {
+                  "ActionMode" : "CREATE_UPDATE",
+                  "StackName": "sleestac"
+                },
+                "RunOrder" : 1
+              },
+              {
                 "Name" : "BuildAction",
                 "InputArtifacts" : [
                   {"Name" : "SourceOutput"}
