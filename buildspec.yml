@@ -15,18 +15,19 @@ phases:
     commands:
       # no stack update currently returns 255 status code
       #  updated to 1.16 awscli to resolve
-      - id
-      - ps
+      #- id
+      #- ps
       - apt-get update && apt install -y jq
       #- pip install --upgrade --user awscli
       - aws --version
       - echo $STACK_NAME
-      - |
-        aws cloudformation validate-template \
-            --template-body file://base-cfn.json
-      # 10/22/2018 this wasn't working very smoothly
-      #    for now just manually update the stack when it needs changing
-      # # this is to check if any changes first
+      # 2019-12-21 going to replace all of this with split out of pipeline and resource stack
+      # - |
+      #   aws cloudformation validate-template \
+      #       --template-body file://base-cfn.json
+      # # 10/22/2018 this wasn't working very smoothly
+      # #    for now just manually update the stack when it needs changing
+      # # # this is to check if any changes first
       # - |
       #   aws cloudformation create-change-set \
       #       --stack-name $STACK_NAME \
@@ -76,6 +77,9 @@ phases:
   post_build:
     commands:
       - aws s3 sync ./build s3://$WEB_BUCKET/ --delete --acl public-read
+      - aws s3 cp --acl public-read --cache-control="max-age=0, no-cache, no-store, must-revalidate" ./build/service-worker.js s3://$WEB_BUCKET/
+      - aws s3 cp --acl public-read --cache-control="max-age=0, no-cache, no-store, must-revalidate" ./build/index.html s3://$WEB_BUCKET/
+      - aws cloudfront create-invalidation --distribution-id $CFN_DIST --paths /index.html /service-worker.js
       - SNS_TOPIC=$( aws cloudformation describe-stack-resource --stack-name $STACK_NAME --logical-resource-id SNSTopic | jq -r '.StackResourceDetail.PhysicalResourceId' )
       - aws sns publish --target-arn $SNS_TOPIC --message 'Environment Build completed'
 
