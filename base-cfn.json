@@ -229,6 +229,13 @@
                   ],
                   "Resource" : "*",
                   "Effect" : "Allow"
+                },
+                {
+                  "Action" : [
+                    "cloudfront:CreateInvalidation"
+                  ],
+                  "Resource" : {"Fn::Join": ["", ["awn:aws:cloudfront::", {"Ref": "AWS::AccountId"}, ":distribution/", {"Ref": "WebCDN"}]]},
+                  "Effect" : "Allow"
                 }
               ]
             }
