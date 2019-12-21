@@ -257,6 +257,10 @@
               "Value" : { "Ref" : "WebBucket" }
             },
             {
+              "Name" : "CFN_DIST",
+              "Value" : { "Ref" : "WebCDN" }
+            },
+            {
               "Name" : "STACK_NAME",
               "Value" : { "Ref" : "AWS::StackName" }
             }
