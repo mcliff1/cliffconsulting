@@ -229,13 +229,6 @@
                   ],
                   "Resource" : "*",
                   "Effect" : "Allow"
-                },
-                {
-                  "Action" : [
-                    "cloudfront:CreateInvalidation"
-                  ],
-                  "Resource" : {"Fn::Join": ["", ["arn:aws:cloudfront::", {"Ref": "AWS::AccountId"}, ":distribution/", {"Ref": "WebCDN"}]]},
-                  "Effect" : "Allow"
                 }
               ]
             }
@@ -380,6 +373,23 @@
           {
             "Name" : "Build",
             "Actions" : [
+              {
+                "Name" : "UpdateStack",
+                "InputArtifacts" : [
+                  {"Name" : "SourceOutput"}
+                ],
+                "ActionTypeId" : {
+                  "Category" : "Deploy",
+                  "Owner" : "AWS",
+                  "Version" : "1",
+                  "Provider" : "CloudFormation"
+                },
+                "Configuration" : {
+                  "ActionMode" : "CREATE_UPDATE",
+                  "StackName": "sleestac"
+                },
+                "RunOrder" : 1
+              },
               {
                 "Name" : "BuildAction",
                 "InputArtifacts" : [
