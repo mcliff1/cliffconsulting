@@ -112,7 +112,7 @@ class Resume extends Component {
 
 
                     <ul>
-                  <li><a href="https://www.certmetrics.com/amazon/public/transcript.aspx?transcript=RLS2DY111E4QQQ9P" rel="noopener noreferrer" target="_blank"><strong>AWS CERTIFIED SOLUTION ARCHITECT – ASSOCIATE</strong></a><p>December 2017 – December 2019</p></li>
+                  <li><a href="https://www.certmetrics.com/amazon/public/transcript.aspx?transcript=RLS2DY111E4QQQ9P" rel="noopener noreferrer" target="_blank"><strong>AWS CERTIFIED SOLUTION ARCHITECT – ASSOCIATE</strong></a><p>December 2017 – December 2020</p></li>
 
                   <li><a href="https://www.coursera.org/account/accomplishments/specialization/HSUAANKME4AG" rel="noopener noreferrer" target="_blank"><strong>COURSERA - DATA SCIENCE SPECIALIZATION</strong></a>
                   <p>Complete March 2018; 10 4-week courses, includes R, regression, data science practice, inference, machine learning</p></li>
