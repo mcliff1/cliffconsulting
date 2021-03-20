@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 import { Collapse, Card, Button, CardBody } from 'reactstrap';
 
 
-class ResumeStrongList extends Component {
-  render() {
-    return (
-      <div>
-      <strong>title</strong>
-      <ul>
-        <li>for each element in list</li>
-      </ul>
-      </div>
-    )
-  }
-}
+// class ResumeStrongList extends Component {
+//   render() {
+//     return (
+//       <div>
+//       <strong>title</strong>
+//       <ul>
+//         <li>for each element in list</li>
+//       </ul>
+//       </div>
+//     )
+//   }
+// }
 
 
 class ResumeSection extends Component {
