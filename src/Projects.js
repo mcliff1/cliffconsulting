@@ -1,4 +1,5 @@
-import React, { Component, Section } from 'react';
+//import React, { Component, Section } from 'react';
+import React, { Component } from 'react';
 
 /* Expects
  * title
