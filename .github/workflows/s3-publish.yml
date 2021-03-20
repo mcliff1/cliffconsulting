@@ -60,6 +60,6 @@ jobs:
           echo $BUCKET
           npm install
           npm run build
-          aws s3 sync ./build s3://${BUCKET}/ --delete --acl public-read
+          aws s3 sync ./build s3://${BUCKET}/ --delete
 
         if: github.ref == 'refs/heads/feature/init-pipeline'
