@@ -5,14 +5,15 @@
 #
 # ref: https://github.com/mcliff1/cliffconsulting/new/master?filename=.github%2Fworkflows%2Faws.yml&workflow_template=aws
 name: AWS Publish
-
-on:
-  pull_request:
-    branches:
-      - master
-      - release/dev
-  push:
-    - feature/*
+#
+# on:
+#   pull_request:
+#     branches:
+#       - master
+#       - release/dev
+#   push:
+#     - feature/*
+on: [push]
 
 jobs:
   deploy:
@@ -22,3 +23,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: My script
+        run: |
+          set
+        shell: bash
