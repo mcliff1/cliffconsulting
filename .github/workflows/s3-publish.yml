@@ -34,11 +34,11 @@ jobs:
           role-to-assume: ${{ secrets.TEST_AWS_ROLE_ARN }}
           role-duration-seconds: 1800
 
-      - name: get sts info
+      - name: Build And Deploy
         run: |
-          aws sts get-caller-identity
           BUCKET=$(aws ssm get-parameter --name /tmp/app/cliffconsulting/bucket --query 'Parameter.Value' --output text)
           echo $BUCKET
+          npm install
           npm run build
           aws s3 sync ./build s3:/${BUCKET}/ --delete --acl public-read
 
