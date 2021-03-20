@@ -35,7 +35,7 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
-  
+
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
@@ -60,6 +60,6 @@ jobs:
           echo $BUCKET
           npm install
           npm run build
-          aws s3 sync ./build s3:/${BUCKET}/ --delete --acl public-read
+          aws s3 sync ./build s3://${BUCKET}/ --delete --acl public-read
 
         if: github.ref == 'refs/heads/feature/init-pipeline'
