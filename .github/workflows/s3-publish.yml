@@ -24,6 +24,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      # https://github.com/marketplace/actions/configure-aws-credentials-action-for-github-actions
       - name: Configuration for Test
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -31,5 +32,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.TEST_AWS_SECRET_ACCESS_KEY }}
           aws-region: us-west-2
 
-      - run: |
+      - name: get sts info
+        run: |
           aws sts get-caller-identity
+        if: github.reg == 'refs/heads/feature/trunk-20210321'
