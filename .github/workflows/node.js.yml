@@ -3,12 +3,12 @@
 
 name: Node.js CI
 
-on:
-  push:
-    branches:
-      - master
-      - feature/*
-      - release/*
+# on:
+#   push:
+#     branches:
+#       - master
+#       - feature/*
+#       - release/*
 
 jobs:
   build:
