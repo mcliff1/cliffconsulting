@@ -12,7 +12,7 @@ on:
       - master
       - release/dev
     push:
-      - feature/**
+      - mcliff1/feature/**
 
 jobs:
   deploy:
