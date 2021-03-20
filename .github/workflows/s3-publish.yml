@@ -1,0 +1,24 @@
+# this workflow will publish to an AWS S3 Bucket
+#
+# based off branch we will look up and gain credentials from the environment
+# DEPLOY_{env}_KEY, SECRET, ROLE
+#
+# ref: https://github.com/mcliff1/cliffconsulting/new/master?filename=.github%2Fworkflows%2Faws.yml&workflow_template=aws
+name: AWS Publish
+
+on:
+  pull_requst:
+    branches:
+      - master
+      - release/dev
+    push:
+      - feature/*
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
