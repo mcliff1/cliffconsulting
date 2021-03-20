@@ -7,7 +7,7 @@
 name: AWS Publish
 
 on:
-  pull_requst:
+  pull_request:
     branches:
       - master
       - release/dev
