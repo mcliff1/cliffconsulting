@@ -32,6 +32,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.TEST_AWS_SECRET_ACCESS_KEY }}
           aws-region: us-west-2
           role-to-assume: ${{ secrets.TEST_AWS_ROLE_ARN }}
+          role-duration-seconds: 1800
 
       - name: get sts info
         run: |
