@@ -35,4 +35,4 @@ jobs:
       - name: get sts info
         run: |
           aws sts get-caller-identity
-        if: github.reg == 'refs/heads/feature/trunk-20210321'
+        if: github.ref == 'refs/heads/feature/init-pipeline'
