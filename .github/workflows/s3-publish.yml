@@ -47,12 +47,24 @@ jobs:
       # https://github.com/marketplace/actions/configure-aws-credentials-action-for-github-actions
       - name: Configuration for Test
         uses: aws-actions/configure-aws-credentials@v1
+        if: github.ref == 'refs/heads/release/dev'
         with:
           aws-access-key-id: ${{ secrets.TEST_AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.TEST_AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
           role-to-assume: ${{ secrets.TEST_AWS_ROLE_ARN }}
           role-duration-seconds: 1800
+
+      - name: Configuration for Production
+        uses: aws-actions/configure-aws-credentials@v1
+        if: ${{ github.ref == 'refs/heads/master' }}
+        with:
+          aws-access-key-id: ${{ secrets.PROD_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.PROD_AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+          role-to-assume: ${{ secrets.PROD_AWS_ROLE_ARN }}
+          role-duration-seconds: 1800
+
 
       - name: Build And Deploy
         run: |
@@ -62,4 +74,4 @@ jobs:
           npm run build
           aws s3 sync ./build s3://${BUCKET}/ --delete
 
-        if: github.ref == 'refs/heads/release/dev'
+        if: ${{ github.ref == 'refs/heads/release/dev' || github.ref == 'refs/heads/master' }}
