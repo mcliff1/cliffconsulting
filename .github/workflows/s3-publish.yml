@@ -68,7 +68,7 @@ jobs:
 
       - name: Build And Deploy
         run: |
-          BUCKET=$(aws ssm get-parameter --name /tmp/app/cliffconsulting/bucket --query 'Parameter.Value' --output text)
+          BUCKET=$(aws ssm get-parameter --name /app/cdn/cliffconsulting.mattcliff.net/bucket --query 'Parameter.Value' --output text)
           echo $BUCKET
           npm install
           npm run build
