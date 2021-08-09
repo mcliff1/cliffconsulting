@@ -127,6 +127,7 @@ class Resume extends Component {
               <li><strong>Cloud Architect | BenefitSolver | 03/2019 – current</strong>
                 <ul>
                   <li>Architect AWS Serverless solution</li>
+                  <li>Merged 3TB of on-premise file system to cloud with no production interruption</li>
                 </ul>
               </li>
               <li><strong>SOFTWARE ENGINEER | Nordstrom Credit | 07/2018 – 02/2019</strong>
