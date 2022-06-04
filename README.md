@@ -36,7 +36,7 @@ Working to update some packages
 https://docs.npmjs.com/getting-started/updating-local-packages
 
 Ran this (from windows)  - in same dir as package.json
-* `npm install` for a new work area
+* `npm install` for a new work area (this installs everything localling no node_modules/ folder)
 * `npm outdated`
 * `npm update`
 * I had a note about this, but it isnt in NodeJs5.6 `npm audit fix`
