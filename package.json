@@ -5,20 +5,23 @@
   "dependencies": {
     "ajv": "^6.10.2",
     "bootstrap": "^4.3.1",
+    "ejs": ">=3.1.7",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-icons": "^4.4.0",
     "react-media": "^1.9.2",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "^5.0.1",
-    "reactstrap": "^6.5.0",
-    "ejs": ">=3.1.7"
+    "react-scripts": "^2.1.3",
+    "reactstrap": "^6.5.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "overrides": {
+    "autoprefixer": "10.4.5"
   },
   "browserslist": [
     ">0.2%",
