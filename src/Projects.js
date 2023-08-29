@@ -9,6 +9,7 @@ import React, { Component } from 'react';
  * published
  */
 const project_list = [
+  /*
   {
     'title' : 'TMS - Sample Serverless Application',
     'href': 'https://tms.mattcliff.net/',
@@ -16,6 +17,7 @@ const project_list = [
     'description': 'This tool utilizes AWS serverless technologies - Lambda, API Gateway, Cloud Front, Cloud Formation, Cognito, S3 and REACT',
     'tagline': 'publshed 6/4/2018'
   },
+  */
   {
     'title' : 'Data Science Specialization Capstone',
     'href': 'https://mcliff.shinyapps.io/qknewt/',
