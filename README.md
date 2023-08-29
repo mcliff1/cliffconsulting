@@ -11,6 +11,12 @@ We will have a pipeline with 1 source (this Git);
 
 THE ONLY stacks I should ever manually deploy are Pipeline stacks;  or CodeBuild stacks (if I am too lazy for pipeline).
 
+## Local Develop
+
+Any docker station (using Windows as example since that's what I'm running)
+`docker run -it -p 3000:3000 -m //c/Home/Users/mcliff/git/cliffconsulting:/home/node --user 1000 node:18 bash`
+
+then `npm start`
 
 (6/7/19) updated react-router-dom (from 4.4.0 which doesnt exit) to 5.0.1
 
@@ -91,3 +97,12 @@ Current Status-
 ## References
 
 * You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+
+
+### TODO - error messaegs
+
+(node:126) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option
+.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:126) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' opti
+on.
