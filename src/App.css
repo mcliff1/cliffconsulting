@@ -1,5 +1,12 @@
 body {
   text-align: left;
+  border: 5px solid rgba(112, 146, 190, 0.5);
+}
+
+.h3 {
+  background-color: #7092be;
+  color: #fff;
+  padding: 10px;
 }
 
 .nav {
