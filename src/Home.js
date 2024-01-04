@@ -7,7 +7,7 @@ const Home = () => {
 
           <div className="container-fluid">
           <div className="h3">
-          About Me
+          About Matt
           </div>
 
           <p>
