@@ -7,6 +7,7 @@ import Articles from './Articles';
 import Projects from './Projects';
 import Resume from './Resume';
 import Contact from './Contact';
+import Footer from './Footer'; // Import the Footer component
 
 class App extends Component {
   render() {
@@ -24,6 +25,8 @@ class App extends Component {
           <Route path="/contact" element={<Contact />} />
         </Routes>
         </div>
+
+        <Footer /> {/* Add the Footer component */}
       </div>
     </BrowserRouter>
     );
