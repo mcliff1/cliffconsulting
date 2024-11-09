@@ -1,3 +1,26 @@
+/* Ensure the body and html take up the full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main container to take up full height */
+#root, .main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Content area to grow and allow vertical scrolling if needed */
+.content {
+  flex: 1;
+  overflow-y: auto;
+}
+
 body {
   text-align: left;
   border: 5px solid rgba(112, 146, 190, 0.5);
