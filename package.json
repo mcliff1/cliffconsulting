@@ -1,12 +1,12 @@
 {
-  "name": "cliffconsulting",
-  "version": "0.5.0",
-  "description": "Cliff Consulting website",
+  "name": "your-project-name",
+  "version": "1.0.0",
+  "description": "Your project description",
   "main": "index.js",
   "private": true,
   "keywords": [],
-  "author": "Cliff",
-  "license": "ISC",
+  "author": "Your Name",
+  "license": "MIT",
   "dependencies": {
     "bootstrap": "^5.3.2",
     "react": "^18.2.0",
@@ -38,9 +38,10 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@eslint/js": "^9.14.0",
     "eslint": "^9.14.0",
-    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react": "^7.32.0",
     "globals": "^15.12.0",
     "postcss": "^8.4.31",
+    "prettier": "^2.7.1",
     "react-scripts": "^5.0.1"
   }
 }
