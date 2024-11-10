@@ -5,15 +5,17 @@
 #
 # ref: https://github.com/mcliff1/cliffconsulting/new/master?filename=.github%2Fworkflows%2Faws.yml&workflow_template=aws
 name: AWS Publish
-#
-# on:
-#   pull_request:
-#     branches:
-#       - master
-#       - release/dev
-#   push:
-#     - feature/*
-on: [push]
+
+on:
+  #pull_request:
+  #  branches:
+  #    - master
+  #    - release/dev
+  push:
+    branches:
+      - master
+      - release/dev
+#on: [push]
 
 jobs:
 
@@ -23,7 +25,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x, 18.x, 20.x]
+        node-version: [22.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -46,7 +48,7 @@ jobs:
 
       # https://github.com/marketplace/actions/configure-aws-credentials-action-for-github-actions
       - name: Configuration for Test
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v4
         if: ${{ github.ref == 'refs/heads/release/dev' }}
         with:
           aws-access-key-id: ${{ secrets.TEST_AWS_ACCESS_KEY_ID }}
@@ -56,7 +58,7 @@ jobs:
           role-duration-seconds: 1800
 
       - name: Configuration for Production
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v4
         if: ${{ github.ref == 'refs/heads/master' }}
         with:
           aws-access-key-id: ${{ secrets.PROD_AWS_ACCESS_KEY_ID }}
@@ -68,6 +70,8 @@ jobs:
 
       - name: Build And Deploy
         run: |
+          node -v
+          aws sts get-caller-identity
           ACCOUNT_NAME=$(aws ssm get-parameter --name /foundation/account/name --query 'Parameter.Value' --output text)
           echo $ACCOUNT_NAME
           BUCKET=$(aws ssm get-parameter --name /app/cdn/${ACCOUNT_NAME}-cliffconsulting/bucket --query 'Parameter.Value' --output text)
@@ -75,5 +79,8 @@ jobs:
           npm install
           npm run build
           aws s3 sync ./build s3://${BUCKET}/ --delete
+          STACK_NAME=${ACCOUNT_NAME}-cliffconsulting
+          DISTRIBUTION=$(aws cloudformation --region us-east-1 describe-stacks --stack-name ${STACK_NAME} --query 'Stacks[0].Outputs[?OutputKey==`distributionid`].OutputValue' --output text)
+          aws cloudfront create-invalidation --distribution-id ${DISTRIBUTION} --paths "/*"
 
         if: ${{ github.ref == 'refs/heads/release/dev' || github.ref == 'refs/heads/master' }}
