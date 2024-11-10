@@ -70,7 +70,7 @@ jobs:
 
       - name: Build And Deploy
         run: |
-          nodejs -v
+          node -v
           aws sts get-caller-identity
           ACCOUNT_NAME=$(aws ssm get-parameter --name /foundation/account/name --query 'Parameter.Value' --output text)
           echo $ACCOUNT_NAME
