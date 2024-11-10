@@ -11,8 +11,10 @@ on:
     branches:
       - master
       - release/dev
-  #push:
-  #  - feature/*
+  push:
+    branches:
+      - master
+      - release/dev
 #on: [push]
 
 jobs:
