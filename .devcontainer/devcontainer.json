@@ -1,7 +1,8 @@
 {
   "name": "Cliff Consulting Dev Container",
   "image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:18",
-  // "runArgs": ["--privileged"], // Remove if not strictly needed
+  // "runArgs": ["--privileged"], // Remove if not strictly needed,
+  "remoteUser": "node",
   "postCreateCommand": "npm install && git config --global user.name \"Matt Cliff\" && git config --global user.email \"matt@denvercliffs.com\"",
   "customizations": {
     "vscode": {
