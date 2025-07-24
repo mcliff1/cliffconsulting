@@ -1,12 +1,12 @@
 {
   "name": "Cliff Consulting Dev Container",
   "image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:18",
-  "runArgs": ["--privileged"],
-  "postCreateCommand": "npm install",
+  // "runArgs": ["--privileged"], // Remove if not strictly needed
+  "postCreateCommand": "npm install && git config --global user.name \"Matt Cliff\" && git config --global user.email \"matt@denvercliffs.com\"",
   "customizations": {
     "vscode": {
       "settings": {
-        "terminal.integrated.shell.linux": "/bin/bash"
+        "terminal.integrated.defaultProfile.linux": "bash"
       },
       "extensions": [
         "dbaeumer.vscode-eslint",
