@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'react-bootstrap';
+import { Collapse, Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'react-bootstrap';
 import { NavLink as RRNavLink } from 'react-router-dom';
 import Media from 'react-media';
 import { FaEnvelope, FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
@@ -7,22 +7,19 @@ import { FaEnvelope, FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
 function MyNav() {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
-
-  // Logo path: update if your path differs!
-  const logoPath = "/images/cliffconsulting_logo.gif";
+  const logoPath = "/cliffconsulting_logo.gif";
 
   return (
     <div>
       <Media query="(max-width: 600px)">
         {matches =>
           matches ? (
-            // small screen nav
             <Navbar bg="white" expand="md">
               <NavbarBrand href="/">
                 <img src={logoPath} alt="logo" style={{height: 32, marginRight: 8, verticalAlign: 'middle'}} />
                 Matt Cliff
               </NavbarBrand>
-              <NavbarToggler onClick={toggle} />
+              <Navbar.Toggle onClick={toggle} />
               <Collapse in={isOpen}>
                 <div>
                   <Nav className="ml-auto">
@@ -46,7 +43,6 @@ function MyNav() {
               </Collapse>
             </Navbar>
           ) : (
-            // large screen nav
             <Navbar bg="white" className="nav" expand>
               <NavbarBrand href="/">
                 <img src={logoPath} alt="logo" style={{height: 32, marginRight: 8, verticalAlign: 'middle'}} />
