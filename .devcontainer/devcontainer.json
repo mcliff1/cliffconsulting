@@ -15,7 +15,7 @@
       ]
     }
   },
-  "forwardPorts": [3000],
+  "forwardPorts": [3000, 5173],
   "mounts": [
     "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
   ],
