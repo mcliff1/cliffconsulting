@@ -1,6 +1,6 @@
 {
   "name": "cliffconsulting",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Cliff Consulting Website",
   "main": "index.js",
   "private": true,
@@ -8,18 +8,19 @@
   "author": "Matt Cliff",
   "license": "MIT",
   "dependencies": {
-    "bootstrap": "^5.3.2",
+    "bootstrap": "^5.3.7",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.10.10",
     "react-dom": "^18.2.0",
     "react-icons": "^5.3.0",
     "react-media": "^1.10.0",
-    "react-router-dom": "^6.21.1",
-    "reactstrap": "^9.2.1"
+    "react-router-dom": "^6.21.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "coverage": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject"
   },
   "browserslist": {
@@ -36,10 +37,24 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1",
+    "@testing-library/user-event": "^14.5.2",
     "eslint": "^8.57.1",
     "eslint-plugin-react": "^7.37.2",
     "globals": "^15.12.0",
     "postcss": "^8.4.31",
     "react-scripts": "^5.0.1"
+  }
+  ,
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/**/*.test.{js,jsx}",
+      "!src/setupTests.js",
+      "!src/index.js",
+      "!src/registerServiceWorker.js",
+      "!src/**/*.bak"
+    ]
   }
 }
