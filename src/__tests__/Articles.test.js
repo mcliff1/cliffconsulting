@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Articles from './Articles';
+import Articles from '../Articles';
 
 test('renders Articles with expected links', () => {
   render(<Articles />);
