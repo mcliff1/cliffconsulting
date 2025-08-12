@@ -12,9 +12,9 @@ import Footer from './Footer'; // Import the Footer component
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="App main-container">
         <MyNav />
-        <div>
+        <main className="content">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/resume" element={<Resume />} />
@@ -22,7 +22,7 @@ function App() {
             <Route path="/articles" element={<Articles />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
-        </div>
+        </main>
         <Footer />
       </div>
     </BrowserRouter>
