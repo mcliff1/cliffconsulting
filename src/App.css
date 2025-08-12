@@ -24,6 +24,13 @@ html, body {
 body {
   text-align: left;
   border: 5px solid rgba(112, 146, 190, 0.5);
+  /* Subtle textured background for depth */
+  background-color: #f7f9fc;
+  background-image:
+    radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-position: 0 0, 12px 12px;
+  background-size: 24px 24px;
 }
 
 .h3 {

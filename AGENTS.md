@@ -3,7 +3,7 @@
 - **Source code:** All main React JS code is under `src/` (e.g., `App.js`, components, styles).
 - **Static assets:** Images, HTML, manifest, and public files are in `public/`.
 - **CSS:** Site-wide styles are located in `css/main.css` and component-scoped CSS in `src/`.
-- **Tests:** Test files (e.g., `App.test.js`) are located alongside their related modules in `src/`.
+- **Tests:** Test files are centralized under `src/__tests__/` (e.g., `src/__tests__/App.test.js`).
 ## Build, Test, and Development Commands
 - `npm install` – Install all dependencies.
 - `npm start` – Start the development server with hot reload.
@@ -16,7 +16,7 @@
 - **Formatting:** Follow the formatting rules in `.eslintrc` and default Prettier standards if configured.
 ## Testing Guidelines
 - **Framework:** Uses React Testing Library (via `react-scripts test`).
-- **Locations:** Keep test files adjacent to the code under test, named as `*.test.js`.
+- **Locations:** Keep all test files in `src/__tests__/`, named as `*.test.js`.
 - **Coverage:** Maintain or improve existing test coverage with every change.
 - **Commands:** Run `npm test` locally and ensure all tests pass before submitting.
 ## Commit & Pull Request Guidelines
