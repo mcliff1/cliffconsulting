@@ -9,12 +9,12 @@
   "license": "MIT",
   "dependencies": {
     "bootstrap": "^5.3.7",
-    "react": "^18.2.0",
+    "react": "^19.1.1",
     "react-bootstrap": "^2.10.10",
-    "react-dom": "^18.2.0",
+    "react-dom": "^19.1.1",
     "react-icons": "^5.3.0",
     "react-media": "^1.10.0",
-    "react-router-dom": "^6.21.1"
+    "react-router-dom": "^7.8.0"
   },
   "scripts": {
     "start": "vite",
@@ -37,15 +37,15 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/plugin-transform-private-property-in-object": "^7.27.1",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.0.1",
     "@testing-library/user-event": "^14.5.2",
     "@vitejs/plugin-react": "^5.0.0",
     "@vitest/coverage-v8": "^3.2.4",
-    "eslint": "^8.57.1",
+    "eslint": "^9.33.0",
     "eslint-plugin-react": "^7.37.2",
-    "globals": "^15.12.0",
+    "globals": "^16.3.0",
     "jsdom": "^26.1.0",
     "postcss": "^8.4.31",
     "vite": "^7.1.2",
