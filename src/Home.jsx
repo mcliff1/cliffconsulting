@@ -19,9 +19,6 @@ const Home = () => {
           Explore this website to learn more about his skills and accomplishments!
           </p>
 
-          <p>
-          Top Reasons to hire Matt include
-          </p>
           <ul>
           <li><b>Developer/Architect</b> With twenty years of professional experience in software development, Matt has worked in various roles, including development, architecture, and project management. He has expertise in both traditional and agile approaches and possesses a solid understanding of implementing technology ideas into production systems with industry-standard development life-cycle management controls. Matt is also a certified AWS Cloud Architect Associate.</li>
 
