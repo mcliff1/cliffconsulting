@@ -9,16 +9,7 @@ import Contact from './Contact.jsx'
 import Footer from './Footer.jsx'
 import './App.css'
 
-// Move initialization logging to module level
-console.log('[App.jsx] App component initializing')
-
 export default function App() {
-  // Remove render logging or use React.useEffect for runtime logs
-  React.useEffect(() => {
-    console.log('[App.jsx] App mounted')
-    return () => console.log('[App.jsx] App unmounted')
-  }, [])
-
   return (
     <div className="App main-container">
       <MyNav />
