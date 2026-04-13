@@ -5,10 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
 import App from './App.jsx' // Add .jsx extension
 
-console.log('[index.jsx] Starting application')
-
 const container = document.getElementById('root')
-console.log('[index.jsx] container:', container)
 
 const root = createRoot(container)
 root.render(
@@ -18,5 +15,3 @@ root.render(
     </BrowserRouter>
   </React.StrictMode>
 )
-
-console.log('[index.jsx] root.render() called')

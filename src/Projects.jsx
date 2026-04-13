@@ -80,8 +80,8 @@ class Projects extends Component {
           <section>
           { project_list.map( (proj, idx) => {
             return(
-              <div>
-              <ProjectItem proj={proj} key={idx} />
+              <div key={proj.href || idx}>
+              <ProjectItem proj={proj} />
               <p/>
               </div>
             )
