@@ -24,13 +24,15 @@ html, body {
 body {
   text-align: left;
   border: 5px solid rgba(112, 146, 190, 0.5);
-  /* Subtle textured background for depth */
-  background-color: #f7f9fc;
+  background-color: #f5f7fb;
   background-image:
-    radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-    radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-  background-position: 0 0, 12px 12px;
-  background-size: 24px 24px;
+    radial-gradient(circle at 1px 1px, rgba(112, 146, 190, 0.22) 1px, transparent 0),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(220, 229, 242, 0.42));
+  background-position: 0 0, 0 0;
+  background-size: 18px 18px, 100% 100%;
+}
+
+.container-fluid {
 }
 
 .h3 {
